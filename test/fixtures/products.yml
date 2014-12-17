@@ -11,3 +11,9 @@ two:
   description: MyText
   image_url: MyString
   price: 9.99
+
+ruby:
+  title: My Swim Suit by Kes
+  description: Authoritatively fabricate. 
+  price: 49.95
+  image_url: ruby.png
