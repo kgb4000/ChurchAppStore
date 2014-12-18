@@ -1,8 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+h1.logo {
+	font-size: 1.8em;
+	font-weight: 900;
+	text-align: center;
+}
+
+ul.navigation {
+	list-style-type: none;
+}
+
 h3 {
-	font-size: 1.2em;
+	font-size: .8em;
 	font-weight: bold;
 }
 

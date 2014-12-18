@@ -7,6 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<header>
+		<h1 class="logo">Union at 1600</h1>
+		<nav>
+			<ul class="navigation">
+				<li><%= link_to 'Catalog', store_path %>
+				<li><%= link_to 'Product List', products_path %>
+				<li><%= link_to 'Add New Product', new_product_path %>
+			</ul>
+		</nav>
+	</header>
 
 <%= yield %>
 

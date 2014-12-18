@@ -21,8 +21,11 @@
 							<div>
 			          <%= number_to_currency(product.price) %>
 			        </div>
+			        <div>
+			          <%= button_to 'Add to Cart', line_items_path(product_id: product), class: 'btn btn-success' %>
+			        </div>
 			      </div>
-			     <% end %>
+			    <% end %>
 				</div>
 			<% end %>
 		<% end %>
