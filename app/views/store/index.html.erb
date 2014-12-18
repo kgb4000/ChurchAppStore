@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<h1>Store#index</h1>
+			<% if notice %>
+				<p id ="notice"><%= notice %></p>
+			<% end %>
+
+		</div>
+	</div>
+	# Need to learn more abot caching and how it works in rails.
+	<div class="row">  
+		<% cache ['store', Product.latest] do %>
+			<% @products.each do |product| %>
+				<div class="col-sm-6 col-md-3">
+					<% cache ['entry', product] do %>
+						<div  class="entry">
+							<div><%= image_tag(product.image_url) %></div>
+							 <div><h3><%= product.title %></h3></div>
+							<% sanitize(product.description) %>
+							<div>
+			          <%= number_to_currency(product.price) %>
+			        </div>
+			      </div>
+			     <% end %>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+</div>
