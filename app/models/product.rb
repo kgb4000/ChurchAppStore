@@ -11,6 +11,10 @@ class Product < ActiveRecord::Base
 		message: 'must be a URL for Gif, JPG, or PNG image buddy.'
 		}
 
+	def self.latest
+		Product.order(:updated_at).last
+	end
+
 	private
 
 		# ensure that there are no line items referencing this product
@@ -22,9 +26,4 @@ class Product < ActiveRecord::Base
 				return false
 			end
 		end
-
-	def self.latest
-		Product.order(:updated_at).last
-	end
-
 end

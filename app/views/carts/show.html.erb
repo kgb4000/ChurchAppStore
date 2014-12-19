@@ -6,11 +6,19 @@
 			<% end %>
 
 			<h2>Your cart</h2>
-			<ul class="cart">
-				<% cart.line_items.each do |item| %>
-				<li><%= item.product.title %></li>
+			<div class="cart">
+				<% @cart.line_items.each do |item| %>
+					<span><%= item.quantity %> &times;</span>
+					<span><%= item.product.title %></span>
+					<div><%= number_to_currency(item.total_price) %></div>
 				<% end %>
-			</ul>
+			</div>
+
+			<h2>Total</h2>
+			<div><%= number_to_currency(@cart.total_price) %></div>
+
+			<%= button_to 'Empty cart', @cart, method: :delete,
+					data: { confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
 
 			<%= link_to 'Edit', edit_cart_path(@cart) %> |
 			<%= link_to 'Back', carts_path %>

@@ -1,14 +1,13 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-4">
-			<h1>Store#index</h1>
+			<h1>Store</h1>
 			<% if notice %>
 				<p id ="notice"><%= notice %></p>
 			<% end %>
-
 		</div>
 	</div>
-	# Need to learn more abot caching and how it works in rails.
+	<!-- Need to learn more abot caching and how it works in rails. -->
 	<div class="row">  
 		<% cache ['store', Product.latest] do %>
 			<% @products.each do |product| %>
